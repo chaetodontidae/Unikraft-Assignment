@@ -11,7 +11,7 @@ Assignment2文件夹下包括以下目录：
 
 - libvirt：包含nginx_vm.xml与nginx_qemu-x86_64，nginx_vm.xml是libvirt启动nginx镜像的描述文件，nginx_qemu-x86_64是对app-nginx完成构建的镜像文件
 - james.org：基于libvirt-go实现的简易虚拟机管控后端服务，包括创建、查询、删除、挂起、恢复虚拟机的基本功能
-- notes：包含对qemu命令选项迁移至libvirt的基本记录与libvirt-go api的使用记录
+- notes：包含对qemu命令选项迁移至libvirt的基本记录
 
 ## Nginx镜像的迁移
 

@@ -35,5 +35,5 @@
 
 int main(int argc, char *argv[])
 {
-	printf("Fuck bro!\n");
+	printf("Hello world!\n");
 }

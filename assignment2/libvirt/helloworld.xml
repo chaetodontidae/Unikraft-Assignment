@@ -1,0 +1,15 @@
+<domain type='kvm'>
+  <name>vm_helloworld</name>
+  <!-- low memory = faster startup -->
+  <memory unit='KiB'>2048</memory>
+  <currentMemory unit='KiB'>2048</currentMemory>
+  <vcpu placement='static'>1</vcpu>
+  <os>
+    <type>hvm</type>
+    <!-- unikernel binary path -->
+    <kernel>/var/lib/libvirt/images/hello_qemu-x86_64</kernel>
+  </os>
+  <devices>
+    <graphics port="-1" type="vnc" />
+  </devices>
+</domain>
