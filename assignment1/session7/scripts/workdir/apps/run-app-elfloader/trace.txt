@@ -1,0 +1,279 @@
+Running command: 
+	qemu-system-x86_64
+	-m 2G
+	-nographic
+	-nodefaults
+	-display none
+	-serial stdio
+	-device isa-debug-exit
+	-fsdev local,security_model=passthrough,id=hvirtio0,path=/home/jam/Desktop/assigments/assignment1/session7/scripts/workdir/apps/run-app-elfloader/rootfs/
+	-device virtio-9p-pci,fsdev=hvirtio0,mount_tag=fs0
+	-kernel app-elfloader_qemu-x86_64_full-debug
+	-enable-kvm
+	-cpu host
+	-append "../static-pie-apps/lang/c/helloworld" 
+
+c[?7l[2J[0mSeaBIOS (version 1.15.0-1)
+Booting from ROM..[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 24a000 - 24c000 (fl 1, 8192)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 24c000 - 250000 (fl 2, 16384)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 250000 - 260000 (fl 4, 65536)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 260000 - 280000 (fl 5, 131072)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 280000 - 300000 (fl 7, 524288)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 300000 - 400000 (fl 8, 1048576)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 400000 - 800000 (fl 10, 4194304)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 800000 - 1000000 (fl 11, 8388608)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 1000000 - 2000000 (fl 12, 16777216)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 2000000 - 4000000 (fl 13, 33554432)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 4000000 - 8000000 (fl 14, 67108864)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 8000000 - 10000000 (fl 15, 134217728)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 10000000 - 20000000 (fl 16, 268435456)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 20000000 - 40000000 (fl 17, 536870912)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 40000000 - 60000000 (fl 17, 536870912)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 60000000 - 70000000 (fl 16, 268435456)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 70000000 - 78000000 (fl 15, 134217728)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 78000000 - 7c000000 (fl 14, 67108864)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7c000000 - 7e000000 (fl 13, 33554432)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7e000000 - 7f000000 (fl 12, 16777216)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7f000000 - 7f800000 (fl 11, 8388608)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7f800000 - 7fc00000 (fl 10, 4194304)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7fc00000 - 7fe00000 (fl 9, 2097152)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7fe00000 - 7ff00000 (fl 8, 1048576)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7ff00000 - 7ff80000 (fl 7, 524288)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7ff80000 - 7ffc0000 (fl 6, 262144)
+[    0.000000] dbg:  [libukfallocbuddy] <fallocbuddy.c @  936> ffffff8000229000: Adding physical memory 7ffc0000 - 7ffe0000 (fl 5, 131072)
+[    0.000000] Info: [libkvmplat] <bootinfo.c @   57> Unikraft Atlas (0.13.1~d20aa7cb)
+[    0.000000] Info: [libkvmplat] <bootinfo.c @   59> Architecture: x86_64
+[    0.000000] Info: [libkvmplat] <bootinfo.c @   64> Boot loader : qemu-multiboot
+[    0.000000] Info: [libkvmplat] <bootinfo.c @   67> Command line: app-elfloader_qemu-x86_64_full-debug ../static-pie-apps/lang/c/helloworld
+[    0.000000] Info: [libkvmplat] <bootinfo.c @   69> Boot memory map:
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  000000100000-0000001ac000 0000000ac000 r-x 0000000000100000 krnl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  0000001ac000-0000001ca000 00000001e000 r-- 00000000001ac000 krnl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  0000001ca000-000000217000 00000004d000 rw- 00000000001ca000 krnl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  0000001c9140-0000001ca140 000000001000 rw- 00000000001c9140 krnl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  000000217000-000000217049 000000000049 r-- 0000000000217000 cmdl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  000000218000-000000219000 000000001000 rw- 0000000000218000 cmdl 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  000000219000-000000229000 000000010000 rw- 0000000000219000 stck 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  000000229000-00007ffe0000 00007fdb7000 --- ffffffffffffffff  
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  00007ffe0000-000080000000 000000020000 r-- 000000007ffe0000 rsvd 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  0000feffc000-0000ff000000 000000004000 r-- 00000000feffc000 rsvd 
+[    0.000000] Info: [libkvmplat] <bootinfo.c @  113>  0000fffc0000-000100000000 000000040000 r-- 00000000fffc0000 rsvd 
+[    0.000000] Info: [libkvmplat] <setup.c @  227> SYSCALL entrance @ 0x105511
+[    0.000000] Info: [libkvmplat] <setup.c @  374> Switch from bootstrap stack to stack @0x229000
+[    0.000000] Info: [libukboot] <boot.c @  252> Unikraft constructor table at 0x1c9000 - 0x1c9068
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x1239b0())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x151290())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x155840())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x1590b0())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x180330())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x1aa5c0())...
+[    0.000000] dbg:  [libcontext] <ectx.c @   85> Load/store of extended CPU state: FXSAVE
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x1123c0())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x112e40())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x114fc0())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x16ff00())...
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x110f40())...
+[    0.000000] dbg:  [libukbus] <bus.c @   52> Register bus handler: 0x1ca000
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x111720())...
+[    0.000000] dbg:  [libukbus] <bus.c @   52> Register bus handler: 0x1ca060
+[    0.000000] dbg:  [libukboot] <boot.c @  255> Call constructor: 0x132280())...
+[    0.000000] dbg:  [libuklibparam] <parser.c @  534> Parsing snippet: "../static-pie-apps/lang/c/helloworld"
+[    0.000000] dbg:  [libuklibparam] <parser.c @  577>  No value given (separator '=' not found), trying without...
+[    0.000000] dbg:  [libuklibparam] <parser.c @  586>  Parsed token:
+[    0.000000] dbg:  [libuklibparam] <parser.c @  588>   libprefix: ""
+[    0.000000] dbg:  [libuklibparam] <parser.c @  590>   paramname: "./static-pie-apps/lang/c/helloworld"
+[    0.000000] dbg:  [libuklibparam] <parser.c @  627>   value: "<NULL>"
+[    0.000000] Info: [libukboot] <boot.c @  288> Initialize memory allocator...
+[    0.000000] Info: [libukallocbbuddy] <bbuddy.c @  516> Initialize binary buddy allocator 400000000
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400002000 - 400004000 (order 1)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400004000 - 400008000 (order 2)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400008000 - 400010000 (order 3)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400020000 - 400040000 (order 5)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400040000 - 400080000 (order 6)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400080000 - 400100000 (order 7)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400100000 - 400200000 (order 8)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400200000 - 400400000 (order 9)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400400000 - 400800000 (order 10)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 400800000 - 401000000 (order 11)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 401000000 - 402000000 (order 12)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 402000000 - 404000000 (order 13)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 404000000 - 408000000 (order 14)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 408000000 - 410000000 (order 15)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 410000000 - 420000000 (order 16)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 420000000 - 440000000 (order 17)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 440000000 - 460000000 (order 17)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 460000000 - 470000000 (order 16)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 470000000 - 478000000 (order 15)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 478000000 - 47c000000 (order 14)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47c000000 - 47e000000 (order 13)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47e000000 - 47f000000 (order 12)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f000000 - 47f800000 (order 11)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f800000 - 47f900000 (order 8)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f900000 - 47f940000 (order 6)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f940000 - 47f960000 (order 5)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f960000 - 47f970000 (order 4)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f970000 - 47f978000 (order 3)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f978000 - 47f97a000 (order 1)
+[    0.000000] dbg:  [libukallocbbuddy] <bbuddy.c @  473> 400000000: Add allocate unit 47f97a000 - 47f97b000 (order 0)
+[    0.000000] dbg:  [libcontext] <tls.c @  174> tls_area_init: target: 0x47f97a020 (376 bytes)
+[    0.000000] dbg:  [libcontext] <tls.c @  176> tls_area_init: copy (.tdata): 4 bytes
+[    0.000000] dbg:  [libcontext] <tls.c @  178> tls_area_init: uninitialized (.tbss): 364 bytes
+[    0.000000] dbg:  [libcontext] <tls.c @  180> tls_area_init: pad: 0 bytes
+[    0.000000] dbg:  [libcontext] <tls.c @  182> tls_area_init: tcb: 8 bytes
+[    0.000000] dbg:  [libcontext] <tls.c @  184> tls_area_init: tcb self ptr: 0x47f97a190
+[    0.000000] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f97a020  0d f0 b0 b0 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.000000] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f97a030  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.000000] dbg:  [libcontext] <tls.c @  204> *
+[    0.000000] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f97a190  90 a1 97 7f 04 00 00 00                           |........|
+[    0.000000] Info: [libukboot] <boot.c @  313> Initialize IRQ subsystem...
+[    0.000000] Info: [libukboot] <boot.c @  320> Initialize platform time...
+[    0.000000] Info: [libkvmplat] <tscclock.c @  255> Calibrating TSC clock against i8254 timer
+[    0.100001] Info: [libkvmplat] <tscclock.c @  277> Clock source: TSC, frequency estimate is 2096224620 Hz
+[    0.105712] Info: [libukboot] <boot.c @  324> Initialize scheduling...
+[    0.109436] Info: [libukschedcoop] <schedcoop.c @  257> Initializing cooperative scheduler
+[    0.114360] dbg:  [libuksched] <thread.c @  256> uk_thread 0x4000030b8 (idle): ctx:0x4000030b8, ectx:0x47f9781a0, tlsp:0x47f978190
+[    0.121868] dbg:  [libcontext] <tls.c @  174> tls_area_init: target: 0x47f978020 (376 bytes)
+[    0.127566] dbg:  [libcontext] <tls.c @  176> tls_area_init: copy (.tdata): 4 bytes
+[    0.132253] dbg:  [libcontext] <tls.c @  178> tls_area_init: uninitialized (.tbss): 364 bytes
+[    0.137349] dbg:  [libcontext] <tls.c @  180> tls_area_init: pad: 0 bytes
+[    0.141160] dbg:  [libcontext] <tls.c @  182> tls_area_init: tcb: 8 bytes
+[    0.146079] dbg:  [libcontext] <tls.c @  184> tls_area_init: tcb self ptr: 0x47f978190
+[    0.151053] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f978020  0d f0 b0 b0 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.159377] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f978030  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.167705] dbg:  [libcontext] <tls.c @  204> *
+[    0.171075] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f978190  90 81 97 7f 04 00 00 00                           |........|
+[    0.178347] dbg:  [libcontext] <ctx.c @  134> ukarch_ctx 0x4000030b8: entry:0x15da10(400003020), sp:0x47f950018
+[    0.184906] dbg:  [libuksched] <thread.c @  146> uk_thread 0x4000030b8 (idle) init: Call initialization 0x12b610()...
+[    0.193600] dbg:  [libposix_process] <process.c @  417> thread 0x4000030b8 (idle): Parent 0 (<n/a>) without process context, skipping...
+[    0.202068] dbg:  [libuksched] <thread.c @  256> uk_thread 0x47f979020 (init): ctx:0x47f979020, ectx:0x47f9790d0, tlsp:0x47f97a190
+[    0.209638] dbg:  [libuksched] <thread.c @  146> uk_thread 0x47f979020 (init) init: Call initialization 0x12b610()...
+[    0.216536] dbg:  [libposix_process] <process.c @  417> thread 0x47f979020 (init): Parent 0 (<n/a>) without process context, skipping...
+[    0.224069] Info: [libukboot] <boot.c @  340> Init Table @ 0x1c9068 - 0x1c90d0
+[    0.229455] dbg:  [libukboot] <boot.c @  343> Call init function: 0x12d8d0()...
+[    0.233923] dbg:  [libposix_socket] <driver.c @   79> Installing socket family: 2 library: liblwip (0x1cb680)
+[    0.240234] dbg:  [libukboot] <boot.c @  343> Call init function: 0x165eb0()...
+[    0.245138] dbg:  [libvfscore] <main.c @ 1984> (int) uk_syscall_r_dup2((int) 0x0, (int) 0x1)
+[    0.250855] dbg:  [libvfscore] <main.c @ 1937> (int) uk_syscall_r_dup3((int) 0x0, (int) 0x1, (int) 0x0)
+[    0.256768] dbg:  [libvfscore] <main.c @  270> (int) uk_syscall_r_close((int) 0x1)
+[    0.261352] dbg:  [libvfscore] <main.c @ 1984> (int) uk_syscall_r_dup2((int) 0x0, (int) 0x2)
+[    0.266697] dbg:  [libvfscore] <main.c @ 1937> (int) uk_syscall_r_dup3((int) 0x0, (int) 0x2, (int) 0x0)
+[    0.273373] dbg:  [libvfscore] <main.c @  270> (int) uk_syscall_r_close((int) 0x2)
+[    0.278640] dbg:  [libukboot] <boot.c @  343> Call init function: 0x1605e0()...
+[    0.283348] Info: [libukswrand] <swrand.c @   86> Initialize random number generator...
+[    0.288613] dbg:  [libukboot] <boot.c @  343> Call init function: 0x151c00()...
+[    0.294085] Info: [libukbus] <bus.c @  134> Initialize bus handlers...
+[    0.298396] dbg:  [libukbus] <bus.c @   76> Initialize bus handler 0x1ca000...
+[    0.303891] dbg:  [libukbus] <bus.c @   76> Initialize bus handler 0x1ca060...
+[    0.308375] Info: [libuk9p] <9pdev_trans.c @   59> Registered transport virtio
+[    0.313476] Info: [libukbus] <bus.c @  136> Probe buses...
+[    0.317008] dbg:  [libukbus] <bus.c @   88> Probe bus 0x1ca000...
+[    0.320984] dbg:  [libkvmpci] <pci_bus_x86.c @  213> Probe PCI
+[    0.325478] Info: [libkvmpci] <pci_bus_x86.c @  164> PCI 00:00.00 (0600 8086:1237): <no driver>
+[    0.331133] Info: [libkvmpci] <pci_bus_x86.c @  164> PCI 00:01.00 (0600 8086:7000): <no driver>
+[    0.337596] Info: [libkvmpci] <pci_bus_x86.c @  164> PCI 00:02.00 (0000 1af4:1009): driver 0x1ca0a0
+[    0.342706] Info: [libkvmvirtio] <virtio_pci.c @  385> Added virtio-pci device 1009
+[    0.347082] Info: [libkvmvirtio] <virtio_pci.c @  387> Added virtio-pci subsystem_device_id 0009
+[    0.352528] Info: [libkvmvirtio] <virtio_bus.c @  127> Virtio device 0x400005020 initialized
+[    0.357924] Info: [libkvmvirtio9p] <virtio_9p.c @  405> virtio-9p: Configured: features=0x1 tag=fs0
+[    0.364177] Info: [libkvmvirtio9p] <virtio_9p.c @  418> virtio-9p: fs0 started
+[    0.369584] dbg:  [libukbus] <bus.c @   88> Probe bus 0x1ca060...
+[    0.373344] dbg:  [libukboot] <boot.c @  343> Call init function: 0x124cc0()...
+[    0.378050] dbg:  [libukboot] <boot.c @  343> Call init function: 0x125e60()...
+[    0.383129] dbg:  [libukboot] <boot.c @  343> Call init function: 0x12da90()...
+[    0.387548] dbg:  [libukboot] <boot.c @  343> Call init function: 0x17abe0()...
+[    0.392083] dbg:  [libukboot] <boot.c @  343> Call init function: 0x190b70()...
+[    0.397519] Info: [liblwip] <init.c @  152> Initializing lwip
+[    0.403024] dbg:  [libukmpi] <mbox.c @   24> Created mailbox 0x40000d020
+[    0.408912] dbg:  [libuksched] <thread.c @  256> uk_thread 0x40000e020 (lwip): ctx:0x40000e020, ectx:0x40000f1a0, tlsp:0x40000f190
+[    0.417172] dbg:  [libcontext] <tls.c @  174> tls_area_init: target: 0x40000f020 (376 bytes)
+[    0.422522] dbg:  [libcontext] <tls.c @  176> tls_area_init: copy (.tdata): 4 bytes
+[    0.427981] dbg:  [libcontext] <tls.c @  178> tls_area_init: uninitialized (.tbss): 364 bytes
+[    0.433587] dbg:  [libcontext] <tls.c @  180> tls_area_init: pad: 0 bytes
+[    0.438237] dbg:  [libcontext] <tls.c @  182> tls_area_init: tcb: 8 bytes
+[    0.442627] dbg:  [libcontext] <tls.c @  184> tls_area_init: tcb self ptr: 0x40000f190
+[    0.447618] dbg:  [libcontext] <tls.c @  204> (tls_area): 40000f020  0d f0 b0 b0 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.455534] dbg:  [libcontext] <tls.c @  204> (tls_area): 40000f030  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.463915] dbg:  [libcontext] <tls.c @  204> *
+[    0.466594] dbg:  [libcontext] <tls.c @  204> (tls_area): 40000f190  90 f1 00 00 04 00 00 00                           |........|
+[    0.473713] dbg:  [libuksched] <thread.c @  146> uk_thread 0x40000e020 (lwip) init: Call initialization 0x12b610()...
+[    0.480332] dbg:  [libposix_process] <process.c @  417> thread 0x40000e020 (lwip): Parent 0x47f979020 (init) without process context, skipping...
+[    0.488496] dbg:  [libcontext] <ctx.c @  134> ukarch_ctx 0x40000e020: entry:0x1a28e0(0), sp:0x400030018
+[    0.494184] dbg:  [libukboot] <boot.c @  343> Call init function: 0x11c980()...
+[    0.498407] dbg:  [libdevfs] <null.c @  111> Register 'null' to devfs
+[    0.502116] dbg:  [libdevfs] <null.c @  123> Register 'zero' to devfs
+[    0.505885] dbg:  [libukboot] <boot.c @  343> Call init function: 0x11cab0()...
+[    0.510065] dbg:  [libdevfs] <stdout.c @   95> Register 'stdout' to devfs
+[    0.513875] dbg:  [libukboot] <boot.c @  343> Call init function: 0x180370()...
+[    0.517954] Info: [libvfscore] <rootfs.c @  121> Mount 9pfs to /...
+[    0.521614] dbg:  [libvfscore] <mount.c @  113> (int) uk_syscall_r_mount((const char*) 0x1c1eb9, (const char*) 0x1c359f, (const char*) 0x1b5f18, (unsigned long) 0x0, (const void*) 0x1c1ba9)
+[    0.531329] Info: [libvfscore] <mount.c @  122> VFS: mounting 9pfs at /
+[    0.535129] dbg:  [libuk9p] <9p.c @  102> TVERSION msize 520192 version 9P2000.L
+[    0.539359] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.544125] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.548114] dbg:  [libuk9p] <9p.c @  112> RVERSION msize 520192 version 9P2000.L
+[    0.552941] dbg:  [libuk9p] <9p.c @  153> TATTACH fid 0 afid 4294967295 uname  aname  n_uname 4294967295
+[    0.558279] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.563079] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.569913] dbg:  [libuk9p] <9p.c @  168> RATTACH qid type 128 version 1689920234 path 2231170
+[    0.576588] dbg:  [libukboot] <boot.c @  343> Call init function: 0x11c8b0()...
+[    0.581505] Info: [libdevfs] <devfs_vnops.c @  308> Mount devfs to /dev...
+[    0.586576] dbg:  [libvfscore] <main.c @ 1249> (int) uk_syscall_r_mkdir((const char*) 0x1b6196, (mode_t) 0x1c0)
+[    0.592629] dbg:  [libuk9p] <9p.c @  223> TWALK fid 0 newfid 1 nwname 1 name dev
+[    0.596908] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.601368] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.605695] dbg:  [libuk9p] <9p.c @  244> RWALK nwqid 1
+[    0.608566] dbg:  [libuk9p] <9p.c @  631> TGETATTR fid 1
+[    0.611380] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.617551] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.623861] dbg:  [libuk9p] <9p.c @  639> RGETATTR
+[    0.626986] dbg:  [libuk9p] <9p.c @  427> TCLUNK fid 1
+[    0.629729] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.634292] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.639280] dbg:  [libuk9p] <9p.c @  431> RCLUNK
+[    0.642052] dbg:  [libvfscore] <mount.c @  113> (int) uk_syscall_r_mount((const char*) 0x1c1ba9, (const char*) 0x1b6196, (const char*) 0x1b601e, (unsigned long) 0x0, (const void*) 0x0)
+[    0.650996] Info: [libvfscore] <mount.c @  122> VFS: mounting devfs at /dev
+[    0.655001] dbg:  [libuk9p] <9p.c @  223> TWALK fid 0 newfid 1 nwname 1 name dev
+[    0.660341] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.665742] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.670275] dbg:  [libuk9p] <9p.c @  244> RWALK nwqid 1
+[    0.673031] dbg:  [libuk9p] <9p.c @  631> TGETATTR fid 1
+[    0.675821] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.680716] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.684632] dbg:  [libuk9p] <9p.c @  639> RGETATTR
+Powered by
+o.   .o       _ _               __ _
+Oo   Oo  ___ (_) | __ __  __ _ ' _) :_
+oO   oO ' _ `| | |/ /  _)' _` | |_|  _)
+oOo oOO| | | | |   (| | | (_) |  _) :_
+ OoOoO ._, ._:_:_,\_._,  .__,_:_, \___)
+                  Atlas 0.13.1~d20aa7cb
+[    0.700144] Info: [libukboot] <boot.c @  370> Pre-init table at 0x1c9120 - 0x1c9120
+[    0.704464] Info: [libukboot] <boot.c @  381> Constructor table at 0x1c9120 - 0x1c9128
+[    0.708620] dbg:  [libukboot] <boot.c @  386> Call constructor: 0x1aaff0()...
+[    0.713030] Info: [libukboot] <boot.c @  393> Environment variables:
+[    0.717380] Info: [libukboot] <boot.c @  395> 	PATH=/bin
+[    0.720751] Info: [libukboot] <boot.c @  401> Calling main(2, ['app-elfloader_qemu-x86_64_full-debug', '../static-pie-apps/lang/c/helloworld'])
+[    0.727746] dbg:  [libuksched] <thread.c @  256> uk_thread 0x47f90f020 (helloworld): ctx:0x47f90f020, ectx:0x47f9101a0, tlsp:0x47f910190
+[    0.734614] dbg:  [libcontext] <tls.c @  174> tls_area_init: target: 0x47f910020 (376 bytes)
+[    0.741752] dbg:  [libcontext] <tls.c @  176> tls_area_init: copy (.tdata): 4 bytes
+[    0.746355] dbg:  [libcontext] <tls.c @  178> tls_area_init: uninitialized (.tbss): 364 bytes
+[    0.751048] dbg:  [libcontext] <tls.c @  180> tls_area_init: pad: 0 bytes
+[    0.755826] dbg:  [libcontext] <tls.c @  182> tls_area_init: tcb: 8 bytes
+[    0.759626] dbg:  [libcontext] <tls.c @  184> tls_area_init: tcb self ptr: 0x47f910190
+[    0.764251] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f910020  0d f0 b0 b0 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.771382] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f910030  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+[    0.778525] dbg:  [libcontext] <tls.c @  204> *
+[    0.781924] dbg:  [libcontext] <tls.c @  204> (tls_area): 47f910190  90 01 91 7f 04 00 00 00                           |........|
+[    0.789656] dbg:  [libuksched] <thread.c @  146> uk_thread 0x47f90f020 (helloworld) init: Call initialization 0x12b610()...
+[    0.797955] dbg:  [libposix_process] <process.c @  417> thread 0x47f90f020 (helloworld): Parent 0x47f979020 (init) without process context, skipping...
+[    0.807993] dbg:  [appelfloader] <main.c @  205> helloworld: Load executable (../static-pie-apps/lang/c/helloworld)...
+[    0.813990] dbg:  [libvfscore] <main.c @  116> (int) uk_syscall_r_open((const char*) 0x218025, (int) 0x0, (mode_t) 0x0)
+[    0.820244] dbg:  [libuk9p] <9p.c @  223> TWALK fid 0 newfid 2 nwname 1 name static-pie-apps
+[    0.824853] dbg:  [libkvmvirtio] <virtio_ring.c @  368> Old head:0, new head:2, total_desc:2
+[    0.830819] dbg:  [libkvmvirtio9p] <virtio_9p.c @  285> notify queue 0
+[    0.834735] dbg:  [libuk9p] <9preq.c @  236> RLERROR 2
+[    0.838092] ERR:  [appelfloader] <elf_load.c @  658> helloworld: Failed to execute ../static-pie-apps/lang/c/helloworld: No such file or directory
+[    0.845208] dbg:  [libuksched] <thread.c @  208> uk_thread 0x47f90f020 (helloworld) term: Call termination 0x12cf90()...
+[    0.851549] dbg:  [libuksched] <thread.c @  208> uk_thread 0x47f90f020 (helloworld) term: Call termination 0x131d70()...
+[    0.857696] dbg:  [libuksched] <thread.c @  208> uk_thread 0x47f90f020 (helloworld) term: Call termination 0x12b8f0()...
+[    0.866790] Info: [libukboot] <boot.c @  410> main returned -2, halting system
+[    0.872692] Info: [libkvmplat] <shutdown.c @   35> Unikraft halted

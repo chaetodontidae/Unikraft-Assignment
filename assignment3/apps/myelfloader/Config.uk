@@ -1,0 +1,102 @@
+### Invisible option for dependencies
+config APPELFLOADER_DEPENDENCIES
+	bool
+	default y
+	select LIBNOLIBC if !HAVE_LIBC
+	select LIBELF
+	select LIBUKSCHED
+	select LIBSYSCALL_SHIM
+	select LIBSYSCALL_SHIM_HANDLER
+	select LIBSYSCALL_SHIM_HANDLER_ULTLS
+	select LIBPOSIX_TIME
+	imply LIBPOSIX_PROCESS
+	imply LIBPOSIX_PROCESS_PIDS
+	imply CONFIG_PAGING
+	imply LIBUKVMEM
+	imply LIBPOSIX_MMAP
+	imply LIBVFSCORE
+	imply LIBPOSIX_SYSINFO
+	imply LIBPOSIX_USER
+	imply LIBUKSWRAND
+
+### App configuration
+choice
+	prompt "Load ELF from"
+	default APPELFLOADER_VFSEXEC
+
+	config APPELFLOADER_VFSEXEC
+		bool "VFS"
+		select LIBVFSCORE
+		help
+			Loads an ELF executable from the virtual filesystem.
+			elfloader will automatically side-load a dynamic loader
+			if it is announced via the PT_INTERP program header.
+			This option is intended for most use cases.
+
+	config APPELFLOADER_INITRDEXEC
+		bool "Initramdisk (ELF)"
+		help
+			Loads an ELF executable that is given as init ramdisk.
+			Please note that this option expects the ramdisk to be
+			the ELF binary image (no filesystem). This option is
+			intended for creating elfloader unikernels without VFS
+			support.
+			Only statically-linked PIE executables are supported.
+endchoice
+
+config APPELFLOADER_CUSTOMAPPNAME
+	bool "Application name/path via command line"
+	default y if APPELFLOADER_VFSEXEC
+	default n
+	help
+		Without this option, any command line argument passed to an
+		elfloader unikernel is forwarded to the ELF application as
+		application argument. If this option is set, the first argument
+		from the kernel command line is used as program name (argv[0]).
+		In case the application is loaded from VFS (see
+		APPELFLOADER_VFSEXEC), this first argument is also the path
+		that is used for looking up the ELF image on the VFS.
+
+if APPELFLOADER_VFSEXEC
+config APPELFLOADER_VFSEXEC_PATH
+	string "Path to executable"
+	default "/init"
+	depends on !APPELFLOADER_CUSTOMAPPNAME
+	help
+		Compiled-in path to executable on the VFS.
+
+config APPELFLOADER_VFSEXEC_EXECBIT
+	bool "Ensure executable bit"
+	default y
+	help
+		Only execute application if executable bit is set.
+endif
+
+menu "System call implementations"
+	config APPELFLOADER_BRK
+	bool "brk, sbrk"
+	default y
+	select LIBUKALLOC
+
+	config APPELFLOADER_BRK_NBPAGES
+	int "Reserved heap size for application (number of pages)"
+	default 512
+	depends on APPELFLOADER_BRK
+	help
+		<n> * 4K; 256 = 1MB, 512 = 2MB, 1024 = 4MB, ...
+
+	config APPELFLOADER_ARCH_PRCTL
+	bool "arch_prctl"
+	depends on ARCH_X86_64
+	default y
+endmenu
+
+config APPELFLOADER_STACK_NBPAGES
+	int "Application stack size (number of pages)"
+	default 32
+	help
+		<n> * 4K; 2 = 8KB, 16 = 64KB, 256 = 1MB ...
+
+config APPELFLOADER_DEBUG
+       bool "Enable debug messages"
+       default n

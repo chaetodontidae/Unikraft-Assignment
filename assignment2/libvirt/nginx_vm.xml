@@ -1,0 +1,39 @@
+<domain type='kvm'>
+  <name>vm1</name>
+  <!-- low memory = faster startup -->
+  <memory unit='KiB'>32000</memory>
+  <currentMemory unit='KiB'>32000</currentMemory>
+  <vcpu placement='static'>1</vcpu>
+  <os>
+    <type>hvm</type>
+    <!-- unikernel binary path -->
+    <kernel>/var/lib/libvirt/images/httpreply_qemu-x86_64</kernel>
+  </os>
+  <clock offset='utc' adjustment='reset'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>preserve</on_crash>
+<devices>
+﻿  <!-- The network interface connected to the bridge br0 -->
+  <interface type='bridge'>
+      <mac address='00:16:3e:6d:45:d0'/>
+      <source bridge='virbr0'/>
+      <target dev='en0'/>
+      <model type='virtio'/>
+      <driver name='vhost' txmode='iothread' ioeventfd='on' event_idx='off'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+﻿     <!-- other serial and console interfaces -->
+     <serial type='pty'>
+      <source path='/dev/pts/20'/>
+      <target port='0'/>
+      <alias name='serial0'/>
+    </serial>
+    <console type='pty' tty='/dev/pts/20'>
+      <source path='/dev/pts/20'/>
+      <target type='serial' port='0'/>
+      <alias name='serial0'/>
+    </console>
+    <graphics port="-1" type="vnc" />
+    </devices>
+</domain>
